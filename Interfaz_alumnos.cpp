@@ -12,11 +12,11 @@ struct Estudiante {
     string telefono;
 };
 
-// Función para dar de alta un estudiante
+
 void alta(Estudiante catalogo[], int& indice) {
     cout << "Ingrese la matricula del estudiante: ";
     cin >> catalogo[indice].matricula;
-    cin.ignore();  // Para ignorar el salto de línea después de la matricula
+    cin.ignore();  
     cout << "Ingrese el nombre: ";
     getline(cin, catalogo[indice].nombre);
     cout << "Ingrese el apellido paterno: ";
@@ -25,9 +25,9 @@ void alta(Estudiante catalogo[], int& indice) {
     getline(cin, catalogo[indice].apellidoMaterno);
     cout << "Ingrese la carrera: ";
     getline(cin, catalogo[indice].carrera);
-    cout << "Ingrese el correo electrónico: ";
+    cout << "Ingrese el correo electrÃ³nico: ";
     getline(cin, catalogo[indice].correo);
-    cout << "Ingrese el teléfono: ";
+    cout << "Ingrese el telÃ©fono: ";
     getline(cin, catalogo[indice].telefono);
 
     indice++;
@@ -51,15 +51,15 @@ void baja(Estudiante catalogo[], int& indice) {
 
     if (encontrado) {
         cout << "Estudiante encontrado. Sus datos son:" << endl;
-        cout << "Matrícula: " << catalogo[pos].matricula << endl;
+        cout << "MatrÃ­cula: " << catalogo[pos].matricula << endl;
         cout << "Nombre: " << catalogo[pos].nombre << endl;
         cout << "Apellido Paterno: " << catalogo[pos].apellidoPaterno << endl;
         cout << "Apellido Materno: " << catalogo[pos].apellidoMaterno << endl;
         cout << "Carrera: " << catalogo[pos].carrera << endl;
         cout << "Correo: " << catalogo[pos].correo << endl;
-        cout << "Teléfono: " << catalogo[pos].telefono << endl;
+        cout << "TelÃ©fono: " << catalogo[pos].telefono << endl;
 
-        cout << "¿Está seguro de que desea eliminar al estudiante? 1. Para sí / 2. Para no: ";
+        cout << "Â¿EstÃ¡ seguro de que desea eliminar al estudiante? 1. Para sÃ­ / 2. Para no: ";
         int confirmacion;
         cin >> confirmacion;
 
@@ -71,7 +71,7 @@ void baja(Estudiante catalogo[], int& indice) {
             cout << "Estudiante eliminado correctamente." << endl;
         }
         else {
-            cout << "Eliminación cancelada." << endl;
+            cout << "EliminaciÃ³n cancelada." << endl;
         }
     }
     else {
@@ -84,9 +84,9 @@ void mostrarTodos(Estudiante catalogo[], int indice) {
         cout << "No hay estudiantes registrados." << endl;
     }
     else {
-        cout << "Lista de matrículas de estudiantes registrados:" << endl;
+        cout << "Lista de matrÃ­culas de estudiantes registrados:" << endl;
         for (int i = 0; i < indice; i++) {
-            cout << "Matrícula: " << catalogo[i].matricula << endl;
+            cout << "MatrÃ­cula: " << catalogo[i].matricula << endl;
         }
     }
 }
@@ -102,13 +102,13 @@ void buscarEstudiante(Estudiante catalogo[], int indice) {
         if (catalogo[i].matricula == matricula) {
             encontrado = true;
             cout << "Estudiante encontrado. Sus datos son:" << endl;
-            cout << "Matrícula: " << catalogo[i].matricula << endl;
+            cout << "MatrÃ­cula: " << catalogo[i].matricula << endl;
             cout << "Nombre: " << catalogo[i].nombre << endl;
             cout << "Apellido Paterno: " << catalogo[i].apellidoPaterno << endl;
             cout << "Apellido Materno: " << catalogo[i].apellidoMaterno << endl;
             cout << "Carrera: " << catalogo[i].carrera << endl;
             cout << "Correo: " << catalogo[i].correo << endl;
-            cout << "Teléfono: " << catalogo[i].telefono << endl;
+            cout << "TelÃ©fono: " << catalogo[i].telefono << endl;
             break;
         }
     }
@@ -145,9 +145,9 @@ void modificarEstudiante(Estudiante catalogo[], int indice) {
         getline(cin, catalogo[pos].apellidoMaterno);
         cout << "Ingrese la nueva carrera: ";
         getline(cin, catalogo[pos].carrera);
-        cout << "Ingrese el nuevo correo electrónico: ";
+        cout << "Ingrese el nuevo correo electrÃ³nico: ";
         getline(cin, catalogo[pos].correo);
-        cout << "Ingrese el nuevo teléfono: ";
+        cout << "Ingrese el nuevo telÃ©fono: ";
         getline(cin, catalogo[pos].telefono);
 
         cout << "Datos del estudiante modificados correctamente." << endl;
@@ -158,7 +158,7 @@ void modificarEstudiante(Estudiante catalogo[], int indice) {
 }
 
 void mostrarMenu() {
-    cout << "Menú principal:" << endl;
+    cout << "MenÃº principal:" << endl;
     cout << "1. Alta de estudiantes" << endl;
     cout << "2. Baja de estudiantes" << endl;
     cout << "3. Modificaciones de estudiantes" << endl;
@@ -175,7 +175,7 @@ int main() {
 
     do {
         mostrarMenu();
-        cout << "Ingrese su selección: ";
+        cout << "Ingrese su selecciÃ³n: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -198,7 +198,7 @@ int main() {
             cout << "Saliendo del programa." << endl;
             break;
         default:
-            cout << "Opción no válida." << endl;
+            cout << "OpciÃ³n no vÃ¡lida." << endl;
             break;
         }
     } while (opcion != 6);
